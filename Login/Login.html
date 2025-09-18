@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Livro Amigo</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+    
+    
+    <main class="container">
+        <form class="form">
+            <h1>Login Livro Amigo</h1>
+
+            <div class="input-container">
+                <label for="usuario" class="sr-only">Usuário</label>
+                <input placeholder="Usuário" type="usuario" id="usuario" required>
+                <i class="bx bxs-user"></i>
+            </div>
+
+            <div class="input-container">
+                <label for="senha" class="sr-only">Senha</label>
+                <input placeholder="Senha" type="password" id="senha" required>
+                <i class="bx bxs-lock-alt"></i>
+            </div>
+
+            <div class="remember">
+                <label for="lembrar">
+                    <input type="checkbox" id="lembrar" name="lembrar" value="lembrar">
+                    Lembrar minha senha
+                </label>
+                <label for="esqueci">
+                <a href="#">Esqueci minha senha</a>
+                </label>
+            </div>
+
+            <button type="submit">Login</button>
+
+            <div class="register">
+                <p>Não tem uma conta? <a href="cadastro.html">Cadastre-se</a>
+            </div>
+        </form>
+    </main>
+
+</body>
+</html>

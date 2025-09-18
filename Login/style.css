@@ -1,0 +1,105 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #C2A178;
+    color: #fff; 
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-image: url('/Public/image/livros.jpg');
+}
+
+.form {
+    background-color: #644036;
+    border-radius: 20px;
+    text-align: center;
+    margin: 7% auto 0 auto;
+    padding: 40px 32px 32px 32px;
+    width: 350px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+}
+
+.form h1 {
+    font-size: 2.2rem;
+    margin-bottom: 28px;
+    color: #fff;
+}
+
+.form label {
+    display: block;
+    text-align: left;
+    margin: 16px 0 6px 0;
+    font-size: 1.1rem;
+    color: #fff;
+}
+.remember {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    gap: 0;
+}
+
+.remember label[for="lembrar"] {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    margin: 0;
+}
+
+.remember label[for="esqueci"] {
+    margin: 0;
+    font-size: 1rem;
+    white-space: nowrap;
+}
+
+.form input[type="usuario"],
+.form input[type="password"] {
+    width: 90%;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    margin-bottom: 12px;
+    font-size: 1rem;
+    background: #fff;
+    color: #644036;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.form input[type="checkbox"] {
+    margin-right: 6px;
+}
+
+.form a {
+    color: #E1A95F;
+    text-decoration: none;
+    margin-left: 8px;
+    font-size: 1rem;
+}
+
+.form a:hover {
+    text-decoration: underline;
+}
+
+.form button, .form input[type="submit"] {
+    background-color: #E1A95F;
+    color: #644036;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 36px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 18px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+
+.form button:hover, .form input[type="submit"]:hover {
+    background-color: #C2A178;
+    color: #fff;
+}
+
+.form .extra-links {
+    margin-top: 18px;
+    font-size: 1rem;
+}
