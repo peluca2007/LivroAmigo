@@ -6,6 +6,10 @@
   <meta name="description" content="Biblioteca Comunitária Livro Amigo: conecte doadores, leitores e voluntários, veja livros em destaque e próximos eventos.">
   <title>Livro Amigo — Biblioteca Comunitária</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 </head>
 <body>
   <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
@@ -29,66 +33,69 @@
   <main id="conteudo" role="main">
     <section class="hero hero--carousel">
       <div class="container">
-        <div class="carousel" data-carousel data-carousel-interval="7000" role="region" aria-label="Novidades Livro Amigo">
+        <div class="carousel-wrap" data-carousel data-carousel-interval="7000" role="region" aria-label="Novidades Livro Amigo">
+          <div class="carousel">
+            <div class="carousel__slides">
+              <article class="carousel__slide is-active" data-slide style="--slide-image: url('Public/imagem fundo.jpg');" role="group" aria-roledescription="slide" aria-label="1 de 3">
+                <div class="carousel__content">
+                  <div class="carousel__meta">Comunidade unida</div>
+                  <h1>Biblioteca Comunitária Livro Amigo</h1>
+                  <p>Conecte doadores, leitores e voluntários para fortalecer o acesso à leitura na sua região.</p>
+                  <div class="hero-actions">
+                    <a class="btn" href="cadastro.html">Quero participar</a>
+                    <a class="btn btn--ghost" href="livros.html">Ver livros</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="carousel__slide" data-slide style="--slide-image: url('Public/imagem fundo criança.jpg');" role="group" aria-roledescription="slide" aria-label="2 de 3">
+                <div class="carousel__content">
+                  <div class="carousel__meta">Eventos e encontros</div>
+                  <h2>Participe das rodas de leitura</h2>
+                  <p>Vivencie clubes de leitura, feiras de troca e mutirões que movimentam a nossa biblioteca comunitária.</p>
+                  <div class="hero-actions">
+                    <a class="btn" href="eventos.html">Próximos eventos</a>
+                    <a class="btn btn--ghost" href="cadastro.html">Seja voluntário</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="carousel__slide" data-slide style="--slide-image: url('Public/fundo imagem.jpg');" role="group" aria-roledescription="slide" aria-label="3 de 3">
+                <div class="carousel__content">
+                  <div class="carousel__meta">Doe ou troque</div>
+                  <h2>Compartilhe livros que inspiram</h2>
+                  <p>Amplie o acervo da comunidade doando títulos favoritos ou trocando por novas histórias para ler.</p>
+                  <div class="hero-actions">
+                    <a class="btn" href="cadastro.html">Cadastrar doação</a>
+                    <a class="btn btn--ghost" href="livros.html">Explorar catálogo</a>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+
           <button class="carousel__control carousel__control--prev" type="button" data-carousel-prev aria-label="Slide anterior">‹</button>
           <button class="carousel__control carousel__control--next" type="button" data-carousel-next aria-label="Próximo slide">›</button>
-          <div class="carousel__slides">
-            <article class="carousel__slide is-active" data-slide style="--slide-image: url('Public/imagem fundo.jpg');" role="group" aria-roledescription="slide" aria-label="1 de 3">
-              <div class="carousel__content">
-                <div class="carousel__meta">Comunidade unida</div>
-                <h1>Biblioteca Comunitária Livro Amigo</h1>
-                <p>Conecte doadores, leitores e voluntários para fortalecer o acesso à leitura na sua região.</p>
-                <div class="hero-actions">
-                  <a class="btn" href="cadastro.html">Quero participar</a>
-                  <a class="btn btn--ghost" href="livros.html">Ver livros</a>
-                </div>
-              </div>
-            </article>
 
-            <article class="carousel__slide" data-slide style="--slide-image: url('Public/imagem fundo criança.jpg');" role="group" aria-roledescription="slide" aria-label="2 de 3">
-              <div class="carousel__content">
-                <div class="carousel__meta">Eventos e encontros</div>
-                <h2>Participe das rodas de leitura</h2>
-                <p>Vivencie clubes de leitura, feiras de troca e mutirões que movimentam a nossa biblioteca comunitária.</p>
-                <div class="hero-actions">
-                  <a class="btn" href="eventos.html">Próximos eventos</a>
-                  <a class="btn btn--ghost" href="cadastro.html">Seja voluntário</a>
-                </div>
-              </div>
-            </article>
-
-            <article class="carousel__slide" data-slide style="--slide-image: url('Public/fundo imagem.jpg');" role="group" aria-roledescription="slide" aria-label="3 de 3">
-              <div class="carousel__content">
-                <div class="carousel__meta">Doe ou troque</div>
-                <h2>Compartilhe livros que inspiram</h2>
-                <p>Amplie o acervo da comunidade doando títulos favoritos ou trocando por novas histórias para ler.</p>
-                <div class="hero-actions">
-                  <a class="btn" href="cadastro.html">Cadastrar doação</a>
-                  <a class="btn btn--ghost" href="livros.html">Explorar catálogo</a>
-                </div>
-              </div>
-            </article>
-          </div>
           <div class="carousel__dots" data-carousel-dots></div>
         </div>
       </div>
     </section>
-
     <section class="cards container">
       <h2>Campanhas ativas</h2>
       <div class="grid">
         <article class="card">
-          <h3>Doe um livro infantil</h3>
+          <h3><i class="bx bxs-book-heart icon" aria-hidden="true"></i> Doe um livro infantil</h3>
           <p>Ajude a formar novos leitores nas escolas do bairro.</p>
           <a class="link" href="cadastro.html">Participar</a>
         </article>
         <article class="card">
-          <h3>Mutirão de catalogação</h3>
+          <h3><i class="bx bxs-book-add icon" aria-hidden="true"></i> Mutirão de catalogação</h3>
           <p>Venha organizar o acervo comunitário no sábado.</p>
           <a class="link" href="eventos.html">Ver evento</a>
         </article>
         <article class="card">
-          <h3>Clube de leitura</h3>
+          <h3><i class="bx bxs-group icon" aria-hidden="true"></i> Clube de leitura</h3>
           <p>Encontros quinzenais para discutir autores nacionais.</p>
           <a class="link" href="eventos.html">Inscreva-se</a>
         </article>
@@ -149,6 +156,12 @@
     <div class="container">
       <p>Projeto Livro Amigo · Biblioteca Comunitária</p>
       <small>Feito com ❤ pela comunidade</small>
+      <p>
+        Integrantes:
+        <a class="link" href="https://github.com/peluca2007" target="_blank" rel="noopener">GitHub Pedro Lucas</a> ·
+        <a class="link" href="https://www.linkedin.com/in/pedro-lucas-sales-larini-7a885b1a4/" target="_blank" rel="noopener">LinkedIn Pedro Lucas</a>
+
+      </p>
     </div>
   </footer>
   <script src="script.js" defer></script>
