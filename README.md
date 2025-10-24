@@ -16,20 +16,7 @@ Site estático para conectar doadores, leitores e voluntários. Inclui páginas 
 ## Rodando localmente
 Basta abrir `index.html` no navegador.
 
-## Publicando no GitHub Pages
-1. No GitHub, vá em Settings → Pages.
-2. Em "Build and deployment", escolha "Deploy from a branch".
-3. Selecione `main` e a pasta `/ (root)`.
-4. Salve. A URL ficará algo como:
-   `https://peluca2007.github.io/LivroAmigo-main/`
 
-Dicas:
-- Use caminhos relativos (já estão configurados) e respeite maiúsculas/minúsculas.
-- Evite nomes de arquivos com espaços e acentos se notar falhas de carregamento.
-
-## Acessibilidade
-- Páginas com skip-link, landmarks (`role="main"`), focos visíveis.
-- Formulários com dicas (`aria-describedby`).
 
 ## Licença
 Projeto comunitário, uso livre para fins educacionais e sociais.
