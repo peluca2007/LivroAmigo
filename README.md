@@ -8,9 +8,7 @@ Website estático que conecta doadores, leitores e voluntários para incentivar 
 - [Páginas](#páginas)
 - [Tecnologias](#tecnologias)
 - [Estrutura do projeto](#estrutura-do-projeto)
-- [Como rodar localmente](#como-rodar-localmente)
 - [Publicação no GitHub Pages](#publicação-no-github-pages)
-- [Validação W3C (HTML e CSS)](#validação-w3c-html-e-css)
 - [Acessibilidade aplicada](#acessibilidade-aplicada)
 - [Integrantes](#integrantes)
 - [Licença](#licença)
@@ -61,26 +59,9 @@ LivroAmigo/
     └── ChatGPT Image 8 de set. de 2025, 17_44_16.png
 ```
 
-## Como rodar localmente
-- Windows (VS Code):
-  1. Abra a pasta no VS Code.
-  2. Extensão recomendada: Live Server (Ritwick Dey).
-  3. Clique com o botão direito em index.html > Open with Live Server.
-- Sem extensões: clique duas vezes em index.html.
 
 ## Publicação no GitHub Pages
-1. GitHub > Settings do repositório.
-2. Aba “Pages” > Source: Deploy from a branch.
-3. Branch: main (ou master) | Folder: /root.
-4. Save. Aguarde o link “Your site is published at …”.
-5. Teste as páginas: /, /livros.html, /eventos.html, /cadastro.html, /login.html, /perfil.html.
-
-## Validação W3C (HTML e CSS)
-- HTML: https://validator.w3.org/
-  - Use “Validate by URL” após publicar no Pages ou “Validate by File Upload” localmente.
-- CSS: https://jigsaw.w3.org/css-validator/
-  - Valide o style.css pelo endereço do GitHub Pages ou upload.
-- Dica: após ajustes, recarregue com Ctrl+F5 para limpar cache.
+https://peluca2007.github.io/LivroAmigo/
 
 ## Acessibilidade aplicada
 - Skip link para conteúdo principal e foco visível em links/botões.
