@@ -21,7 +21,7 @@ Basta abrir `index.html` no navegador.
 2. Em "Build and deployment", escolha "Deploy from a branch".
 3. Selecione `main` e a pasta `/ (root)`.
 4. Salve. A URL ficará algo como:
-   `https://<seu-usuario>.github.io/LivroAmigo-main/`
+   `https://peluca2007.github.io/LivroAmigo-main/`
 
 Dicas:
 - Use caminhos relativos (já estão configurados) e respeite maiúsculas/minúsculas.
