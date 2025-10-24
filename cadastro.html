@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Cadastro de doadores, leitores e voluntários da Biblioteca Comunitária Livro Amigo.">
+  <title>Cadastro — Livro Amigo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="Página inicial Livro Amigo">
+        <img src="Public/ChatGPT%20Image%208%20de%20set.%20de%202025,%2017_44_16.png" alt="Logotipo Livro Amigo" width="80" height="80" loading="lazy">
+        <span>Livro Amigo</span>
+      </a>
+      <nav class="nav">
+        <a href="index.html">Início</a>
+        <a href="livros.html">Livros</a>
+        <a href="eventos.html">Eventos</a>
+        <a href="cadastro.html" aria-current="page">Cadastro</a>
+        <a href="login.html" class="btn">Login</a>
+        <a href="perfil.html" class="btn btn--outline">Perfil</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo" role="main">
+    <section class="hero hero--compact">
+      <div class="container narrow">
+        <h1>Cadastro</h1>
+        <p class="center">Preencha os campos abaixo para fazer parte da nossa biblioteca comunitária.</p>
+      </div>
+    </section>
+
+    <div class="container narrow">
+      <form class="form" action="login.html" method="get">
+      <fieldset>
+        <legend>Dados pessoais</legend>
+
+        <label for="nome">Nome completo
+          <span id="nome-hint" class="field-hint">Como será exibido nas listas e comprovantes da biblioteca.</span>
+        </label>
+        <input id="nome" name="nome" type="text" autocomplete="name" required aria-describedby="nome-hint">
+
+        <label for="email">E-mail
+          <span id="email-hint" class="field-hint">Usaremos este endereço para confirmações e avisos importantes.</span>
+        </label>
+        <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-hint">
+
+        <label for="telefone">Telefone
+          <span id="telefone-hint" class="field-hint">Formato sugerido: (00) 00000-0000.</span>
+        </label>
+        <input id="telefone" name="telefone" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="(00) 00000-0000" pattern="^\(?\d{2}\)?\s?\d{4,5}-?\d{4}$" required aria-describedby="telefone-hint">
+      </fieldset>
+
+      <fieldset>
+        <legend>Perfil</legend>
+
+        <label for="tipo">Tipo de usuário
+          <span id="tipo-hint" class="field-hint">Escolha como você deseja participar do projeto Livro Amigo.</span>
+        </label>
+        <select id="tipo" name="tipo" required aria-describedby="tipo-hint">
+          <option value="" selected disabled>Selecionar</option>
+          <option value="doador">Doador</option>
+          <option value="leitor">Leitor</option>
+          <option value="voluntario">Voluntário</option>
+        </select>
+
+        <label for="local">Localização (cidade/UF)
+          <span id="local-hint" class="field-hint">Informe sua cidade e estado, ex.: Fortaleza/CE.</span>
+        </label>
+        <input id="local" name="local" type="text" placeholder="Ex.: Fortaleza/CE" required aria-describedby="local-hint">
+
+        <label class="checkbox">
+          <input type="checkbox" name="newsletter"> Quero receber novidades por e-mail
+        </label>
+      </fieldset>
+
+      <div class="form-actions">
+        <button class="btn" type="submit">Criar conta</button>
+        <a class="btn btn--ghost" href="login.html">Já tenho conta</a>
+      </div>
+      </form>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Projeto Livro Amigo · Biblioteca Comunitária</p>
+    </div>
+  </footer>
+</body>
+</html>

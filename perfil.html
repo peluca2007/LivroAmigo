@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Perfil do usuário na Biblioteca Comunitária Livro Amigo: histórico, trocas e livros favoritos.">
+  <title>Meu perfil — Livro Amigo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="Página inicial Livro Amigo">
+        <img src="Public/ChatGPT%20Image%208%20de%20set.%20de%202025,%2017_44_16.png" alt="Logotipo Livro Amigo" width="80" height="80" loading="lazy" decoding="async">
+        <span>Livro Amigo</span>
+      </a>
+      <nav class="nav">
+        <a href="index.html">Início</a>
+        <a href="livros.html">Livros</a>
+        <a href="eventos.html">Eventos</a>
+        <a href="cadastro.html">Cadastro</a>
+        <a href="login.html" class="btn">Login</a>
+        <a href="perfil.html" aria-current="page" class="btn btn--outline">Perfil</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo" role="main">
+    <section class="hero hero--compact">
+      <div class="container">
+        <h1>Meu perfil</h1>
+        <p>Resumo das suas doações, trocas e atividades como voluntário.</p>
+      </div>
+    </section>
+
+    <div class="container">
+      <section class="profile">
+      <div class="profile-card">
+        <div class="avatar" aria-hidden="true">PL</div>
+        <div>
+          <h2>Pedro Lucas</h2>
+          <p class="muted">Voluntário · Paranapanema/SP</p>
+        </div>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <h3>Histórico de doações</h3>
+          <ul class="list">
+            <li>Quarto de Despejo — 10/09/2025</li>
+            <li>Vidas Secas — 22/08/2025</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Trocas realizadas</h3>
+          <ul class="list">
+            <li>Memórias Póstumas — 02/08/2025</li>
+            <li>Dom Casmurro — 15/07/2025</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Ações como voluntário</h3>
+          <ul class="list">
+            <li>Mutirão de catalogação — 3h</li>
+            <li>Mediação de roda de leitura — 2h</li>
+          </ul>
+        </article>
+      </div>
+
+      <section class="cards">
+        <h2>Meus livros</h2>
+        <div class="grid grid--books">
+          <article class="card book">
+            <img class="book-cover" src="Public/1984Livro.jpg" alt="Capa do livro 1984" width="72" height="96" loading="lazy" decoding="async">
+            <div class="book-info">
+              <h3>1984</h3>
+              <p class="muted">George Orwell</p>
+              <p>Favoritado</p>
+            </div>
+          </article>
+
+          <article class="card book">
+            <img class="book-cover" src="Public/capitalLivro.webp" alt="Capa do livro O Capital" width="72" height="96" loading="lazy" decoding="async">
+            <div class="book-info">
+              <h3>O Capital</h3>
+              <p class="muted">Karl Marx</p>
+              <p>Doado em 2025</p>
+            </div>
+          </article>
+
+          <article class="card book">
+            <img class="book-cover" src="Public/metamorfeseLivro.jpg" alt="Capa do livro A Metamorfose" width="72" height="96" loading="lazy" decoding="async">
+            <div class="book-info">
+              <h3>A Metamorfose</h3>
+              <p class="muted">Franz Kafka</p>
+              <p>Emprestado</p>
+            </div>
+          </article>
+        </div>
+      </section>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Projeto Livro Amigo · Biblioteca Comunitária</p>
+    </div>
+  </footer>
+</body>
+</html>
