@@ -425,6 +425,7 @@ main {
   gap: 12px
 }
 
+
 .events li {
   display: flex;
   gap: 16px;
@@ -434,19 +435,70 @@ main {
   padding: 14px;
   box-shadow: var(--shadow-soft);
   border: 1px solid var(--border);
-  border-left: 6px solid var(--mostarda)
+  /* borda lateral menor para não dominar o card */
+  border-left: 8px solid var(--mostarda);
+  transition: box-shadow .15s, transform .12s;
+  padding-left: 18px; /* dar espaço interno suficiente para o bloco de data */
+}
+
+.events li {
+  /* permitir que ações (botões) fiquem visíveis e não sejam recortados */
+  overflow: visible;
+
+  /* Posiciona o contêiner de ações no canto superior direito do card.
+     Isso cobre os casos em que o HTML usa um <div> inline (margin-left:auto)
+     em vez de uma classe específica. Em telas pequenas os botões voltam
+     a ser posicionados de forma estática abaixo do conteúdo. */
+}
+
+.events li > div:last-child {
+  /* fallback for any last-child div: ensure it doesn't shrink */
+  flex-shrink: 0;
+}
+
+.events li > div:last-child .btn {
+  white-space: nowrap;
 }
 
 .events time {
-  display: inline-grid;
-  place-items: center;
+  flex: 0 0 auto;
+  white-space: nowrap;
+  min-width: 84px;
+  max-width: 140px;
+}
+.events li > div {
+  min-width: 0; /* importante para evitar overflow em flex items */
+}
+.events time {
+  flex: 0 0 auto;
+  white-space: nowrap;
+  min-width: 84px;
+  max-width: 140px;
+}
+
+.events time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background: color-mix(in oklab, var(--mostarda), #000 10%);
   color: #fff;
   font-weight: 800;
   border-radius: 10px;
   min-width: 76px;
-  height: 56px;
-  box-shadow: var(--shadow-soft)
+  padding: 8px;
+  box-shadow: var(--shadow-soft);
+}
+
+.events time .ev-date {
+  font-size: 0.95rem;
+}
+
+.events time .ev-time {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-top: 4px;
+  color: rgba(255,255,255,0.95);
 }
 
 /* Perfil */
@@ -589,6 +641,12 @@ textarea:focus {
   --fg: var(--marrom-escuro)
 }
 
+.active-filter {
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+  transform: translateY(-2px);
+  border-color: color-mix(in oklab, var(--mostarda), #000 6%);
+}
+
 /* Rodapé */
 .site-footer {
   padding: 28px 0;
@@ -666,26 +724,138 @@ body.auth {
   }
 
   .events li {
-    flex-direction: column
+    flex-direction: column;
   }
 
   .events time {
     min-width: auto;
     width: 100%;
     height: auto;
-    padding: 6px 0
+    padding: 6px 0;
   }
 
   .book {
-    align-items: flex-start
+    align-items: flex-start;
+  }
+
+  /* também aplicar empilhamento para o fallback (div:last-child) */
+  .events li > div:last-child {
+    position: static;
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: 10px;
   }
 
   .form {
-    padding: 18px
+    padding: 18px;
   }
 
   .form-actions {
     flex-direction: column;
-    align-items: stretch
+    align-items: stretch;
+  }
+}
+
+@media (max-width:720px) {
+  /* para larguras intermediárias, prevenir que botões saiam da direita;
+     empilha ações abaixo quando necessário */
+  .events li {
+    flex-direction: column;
+  }
+  .events li > div:last-child {
+    position: static;
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: 10px;
+  }
+}
+/* Em telas pequenas, o card empilha conteúdo — usar acento no topo fica melhor visualmente */
+@media (max-width:480px) {
+  .events li {
+    border-left: 0;
+    border-top: 6px solid var(--mostarda);
+    padding-left: 14px;
+    padding-top: 12px;
+  }
+}
+.events--list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* allow time block to align at top */
+  gap: 12px;
+}
+
+/* permitir que ações (botões) fiquem visíveis em vez de serem recortadas */
+.events--list li {
+  overflow: visible;
+}
+
+.events--list time {
+  flex: 0 0 100px;
+  min-width: 80px;
+  max-width: 140px;
+  text-align: center;
+  word-break: keep-all;
+}
+
+/* evitar quebra de linha dentro de botões de ação */
+.events--list .btn {
+  white-space: nowrap;
+}
+
+.events--list .event-actions {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  z-index: 2;
+}
+
+/* Apply same action container behavior to any events list variant */
+.events .event-actions {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  z-index: 2;
+}
+
+/* ensure main content divs can shrink instead of overflowing */
+.events--list li > div {
+  min-width: 0;
+}
+
+/* Tamanho menor para o botão de excluir */
+.btn--sm {
+  padding: 6px 12px;
+  font-size: 0.9rem;
+}
+
+/* Destaque vermelho ao passar o mouse no botão de excluir */
+.delete-btn:hover {
+  background-color: #ffebee;
+  color: #c62828;
+  border-color: #c62828;
+}
+
+/* Ajuste responsivo para a lista do admin */
+@media (max-width: 480px) {
+  .events--list li {
+    flex-direction: column;
+    align-items: flex-start;
+
+  /* em telas pequenas, empilhar ações abaixo do conteúdo para evitar overflow */
+  .events--list .event-actions {
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: 10px;
+  }
+    gap: 10px;
+  }
+  
+  .delete-btn {
+    width: 100%;
   }
 }

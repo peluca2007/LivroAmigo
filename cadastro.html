@@ -1,31 +1,37 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Cadastro de doadores, leitores e voluntários da Biblioteca Comunitária Livro Amigo.">
+  <meta name="description"
+    content="Cadastro de doadores, leitores e voluntários da Biblioteca Comunitária Livro Amigo.">
   <title>Cadastro — Livro Amigo</title>
   <link rel="stylesheet" href="style.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Poppins:wght@400;600;800&display=swap"
+    rel="stylesheet">
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 </head>
+
 <body>
   <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
   <header class="site-header">
     <div class="container">
       <a class="brand" href="index.html" aria-label="Página inicial Livro Amigo">
-        <img src="Public/ChatGPT%20Image%208%20de%20set.%20de%202025,%2017_44_16.png" alt="Logotipo Livro Amigo" width="80" height="80" loading="lazy">
+        <img src="Public/ChatGPT%20Image%208%20de%20set.%20de%202025,%2017_44_16.png" alt="Logotipo Livro Amigo"
+          width="80" height="80" loading="lazy">
         <span>Livro Amigo</span>
       </a>
       <nav class="nav">
         <a href="index.html">Início</a>
         <a href="livros.html">Livros</a>
         <a href="eventos.html">Eventos</a>
-        <a href="cadastro.html" aria-current="page">Cadastro</a>
-        <a href="login.html" class="btn">Login</a>
+        <a href="cadastro.html">Cadastro</a>
+        <a href="admin.html">Admin</a> <a href="login.html" class="btn">Login</a>
         <a href="perfil.html" class="btn btn--outline">Perfil</a>
       </nav>
     </div>
@@ -41,52 +47,61 @@
 
     <div class="container narrow">
       <form class="form" action="login.html" method="get">
-      <fieldset>
-        <legend>Dados pessoais</legend>
+        <fieldset>
+          <legend>Dados pessoais</legend>
 
-        <label for="nome">Nome completo
-          <span id="nome-hint" class="field-hint">Como será exibido nas listas e comprovantes da biblioteca.</span>
-        </label>
-        <input id="nome" name="nome" type="text" autocomplete="name" required aria-describedby="nome-hint">
+          <label for="nome">Nome completo
+            <span id="nome-hint" class="field-hint">Como será exibido nas listas e comprovantes da biblioteca.</span>
+          </label>
+          <input id="nome" name="nome" type="text" autocomplete="name" required aria-describedby="nome-hint">
 
-        <label for="email">E-mail
-          <span id="email-hint" class="field-hint">Usaremos este endereço para confirmações e avisos importantes.</span>
-        </label>
-        <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-hint">
+          <label for="email">E-mail
+            <span id="email-hint" class="field-hint">Usaremos este endereço para confirmações e avisos
+              importantes.</span>
+          </label>
+          <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-hint">
 
-        <label for="telefone">Telefone
-          <span id="telefone-hint" class="field-hint">Formato sugerido: (00) 00000-0000.</span>
-        </label>
-        <input id="telefone" name="telefone" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="(00) 00000-0000" pattern="^\(?\d{2}\)?\s?\d{4,5}-?\d{4}$" required aria-describedby="telefone-hint">
-      </fieldset>
+          <label for="senha">Senha
+            <span id="senha-hint" class="field-hint">Crie uma senha (mínimo 6 caracteres).</span>
+          </label>
+          <input id="senha" name="senha" type="password" minlength="6" required aria-describedby="senha-hint">
 
-      <fieldset>
-        <legend>Perfil</legend>
+          <label for="telefone">Telefone
+            <span id="telefone-hint" class="field-hint">Formato sugerido: (00) 00000-0000.</span>
+          </label>
+          <input id="telefone" name="telefone" type="tel" inputmode="tel" autocomplete="tel-national"
+            placeholder="(00) 00000-0000" pattern="^\(?\d{2}\)?\s?\d{4,5}-?\d{4}$" required
+            aria-describedby="telefone-hint">
+        </fieldset>
 
-        <label for="tipo">Tipo de usuário
-          <span id="tipo-hint" class="field-hint">Escolha como você deseja participar do projeto Livro Amigo.</span>
-        </label>
-        <select id="tipo" name="tipo" required aria-describedby="tipo-hint">
-          <option value="" selected disabled>Selecionar</option>
-          <option value="doador">Doador</option>
-          <option value="leitor">Leitor</option>
-          <option value="voluntario">Voluntário</option>
-        </select>
+        <fieldset>
+          <legend>Perfil</legend>
 
-        <label for="local">Localização (cidade/UF)
-          <span id="local-hint" class="field-hint">Informe sua cidade e estado, ex.: Fortaleza/CE.</span>
-        </label>
-        <input id="local" name="local" type="text" placeholder="Ex.: Fortaleza/CE" required aria-describedby="local-hint">
+          <label for="tipo">Tipo de usuário
+            <span id="tipo-hint" class="field-hint">Escolha como você deseja participar do projeto Livro Amigo.</span>
+          </label>
+          <select id="tipo" name="tipo" required aria-describedby="tipo-hint">
+            <option value="" selected disabled>Selecionar</option>
+            <option value="doador">Doador</option>
+            <option value="leitor">Leitor</option>
+            <option value="voluntario">Voluntário</option>
+          </select>
 
-        <label class="checkbox">
-          <input type="checkbox" name="newsletter"> Quero receber novidades por e-mail
-        </label>
-      </fieldset>
+          <label for="local">Localização (cidade/UF)
+            <span id="local-hint" class="field-hint">Informe sua cidade e estado, ex.: Fortaleza/CE.</span>
+          </label>
+          <input id="local" name="local" type="text" placeholder="Ex.: Fortaleza/CE" required
+            aria-describedby="local-hint">
 
-      <div class="form-actions">
-        <button class="btn" type="submit">Criar conta</button>
-        <a class="btn btn--ghost" href="login.html">Já tenho conta</a>
-      </div>
+          <label class="checkbox">
+            <input type="checkbox" name="newsletter"> Quero receber novidades por e-mail
+          </label>
+        </fieldset>
+
+        <div class="form-actions">
+          <button class="btn" type="submit">Criar conta</button>
+          <a class="btn btn--ghost" href="login.html">Já tenho conta</a>
+        </div>
       </form>
     </div>
   </main>
@@ -94,7 +109,15 @@
   <footer class="site-footer">
     <div class="container">
       <p>Projeto Livro Amigo · Biblioteca Comunitária</p>
+      <small>Feito com ❤ pela comunidade</small>
+      <p>
+        Integrantes:
+        <a class="link" href="https://github.com/peluca2007" target="_blank" rel="noopener">GitHub Pedro Lucas</a> ·
+        <a class="link" href="https://www.linkedin.com/in/pedro-lucas-sales-larini-7a885b1a4/" target="_blank" rel="noopener">LinkedIn Pedro Lucas</a>
+      </p>
     </div>
   </footer>
+  <script src="cadastro.js" defer></script>
 </body>
+
 </html>
