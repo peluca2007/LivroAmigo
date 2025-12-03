@@ -11,25 +11,25 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem(LOAN_KEY, JSON.stringify(list));
   }
 
-  // Add a request with basic deduplication rules:
-  // - If a registered user (requesterEmail present) creates a request, remove any visitor (null email) requests for same bookId.
-  // - If a visitor (requesterEmail null) creates a request, do not add it if any registered-user request for the same book exists.
-  // - Prevent exact duplicates (same bookId and same requesterEmail).
+  // Adiciona um pedido seguindo regras básicas de deduplicação:
+  // - Se um usuário cadastrado (com requesterEmail) cria um pedido, remover pedidos de visitantes (sem e-mail) para o mesmo bookId.
+  // - Se um visitante (sem requesterEmail) cria um pedido, não adicionar se já existir pedido de usuário cadastrado para o mesmo livro.
+  // - Evitar duplicatas exatas (mesmo bookId e mesmo requesterEmail).
   function addLoanRequest(newReq) {
     const reqs = getLoanRequests();
     const email = newReq.requesterEmail || null;
-    // prevent exact duplicate
+    // evita duplicata exata
     const exact = reqs.find(r => r.bookId === newReq.bookId && (r.requesterEmail || null) === email);
     if (exact) return false;
 
     if (email) {
-      // remove any visitor requests for same book
+      // remove pedidos de visitante para o mesmo livro
       const filtered = reqs.filter(r => !(r.bookId === newReq.bookId && (r.requesterEmail == null)));
       filtered.push(newReq);
       saveLoanRequests(filtered);
       return true;
     } else {
-      // visitor: if any registered request exists for this book, skip adding
+      // visitante: se já existir pedido de usuário cadastrado para este livro, não adicionar
       const hasRegistered = reqs.some(r => r.bookId === newReq.bookId && r.requesterEmail);
       if (hasRegistered) return false;
       reqs.push(newReq);
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
       `;
 
-      // actions: show request button when book is available and current user isn't the owner
+      // ações: mostrar botão de solicitação quando o livro está disponível e o usuário atual não é o dono
       const info = article.querySelector('.book-info');
       try {
         if (b.status === 'Disponível' && (!currentUser || b.owner !== currentUser.email)) {
@@ -100,13 +100,13 @@ document.addEventListener('DOMContentLoaded', () => {
               btn.textContent = 'Solicitar empréstimo';
               btn.addEventListener('click', () => {
                 try {
-                  // defensive: owner cannot request their own book
+                  // defesa: proprietário não pode solicitar seu próprio livro
                   if (currentUser && b.owner === currentUser.email) {
                     alert('Você não pode solicitar seu próprio livro.');
                     return;
                   }
 
-                  // quick duplicate check for same requester (handles null emails too)
+                  // verificação rápida de duplicata para o mesmo solicitante (lida com e-mails nulos)
                   const requests = getLoanRequests();
                   const myEmail = currentUser && currentUser.email ? currentUser.email : null;
                   const exists = requests.find(r => r.bookId === b.id && ((r.requesterEmail || null) === myEmail));
@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     return;
                   }
 
-                  // Do NOT change the book.status here — leave availability unchanged until admin approves
+                  // NÃO alterar `book.status` aqui — deixar disponibilidade até aprovação do admin
                   window.dispatchEvent(new Event('booksUpdated'));
 
                   // disable the button to give immediate feedback

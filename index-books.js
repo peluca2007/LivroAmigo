@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { id: 'b3', title: 'A Metamorfose', author: 'Franz Kafka', cover: 'Public/metamorfeseLivro.jpg', status: 'Disponível', owner: 'pedro@local' }
   ];
 
-  // ensure there are default books if none exist
+  // garantir livros padrão caso não existam
   if (getBooks().length === 0) {
     saveBooks(defaultBooks);
   }
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!grid) return;
     const books = getBooks().filter(b => b && b.status === 'Disponível');
     const subset = books.slice(0, 3);
-    // if no available books, fall back to default static markup
+    // se nenhum livro disponível, manter o markup estático padrão
     if (subset.length === 0) return;
 
     grid.innerHTML = '';
@@ -48,6 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   renderFeatured();
 
-  // re-render when other pages change books
+  // re-renderizar quando outras páginas alterarem os livros
   window.addEventListener('booksUpdated', () => renderFeatured());
 });

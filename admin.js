@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Stable admin.js implementation: storage helpers, rendering and delegation.
+  // Versão estável do admin.js: helpers de armazenamento, renderização e delegação.
   try {
     const STORAGE_KEY = 'livroAmigoUsers';
     const LOAN_KEY = 'livroAmigoLoanRequests';
@@ -18,13 +18,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnExcluirTodos = document.getElementById('btnExcluirTodos');
     const emptyMessage = document.getElementById('emptyMessage');
 
-    // simple auth guard
+    // verificação simples de admin
     if (localStorage.getItem('livroAmigoIsAdmin') !== 'true') {
       window.location = 'admin-login.html';
       return;
     }
 
-    // --- Storage helpers ---
+    // --- Helpers de armazenamento ---
     function getUsers() {
       try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]'); } catch (e) { return []; }
     }
@@ -39,10 +39,10 @@ document.addEventListener('DOMContentLoaded', () => {
     function getEvents() { try { return JSON.parse(localStorage.getItem(EVENTS_KEY) || '[]'); } catch (e) { return []; } }
     function saveEvents(list) { localStorage.setItem(EVENTS_KEY, JSON.stringify(list || [])); }
 
-    // utils
+    // --- Utilitários ---
     function normalizeEmail(e) { return (e || '').toString().trim().toLowerCase(); }
 
-    // --- Users ---
+    // --- Usuários ---
     let editingUserIndex = -1;
     const submitBtn = form ? form.querySelector('button[type="submit"]') : null;
     const defaultSubmitText = submitBtn ? submitBtn.textContent : 'Salvar';
@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // --- Loan Requests ---
+    // --- Pedidos de Empréstimo ---
     function renderLoanRequests() {
       const listEl = document.getElementById('loanRequestsList');
       const noReq = document.getElementById('noLoanRequests');
@@ -199,7 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
       renderLoanRequests();
     }
 
-    // --- Book approvals ---
+    // --- Aprovações de livros ---
     function renderBookApprovals() {
       const listEl = document.getElementById('bookApprovalList');
       const noMsg = document.getElementById('noBookApprovals');
@@ -256,7 +256,7 @@ document.addEventListener('DOMContentLoaded', () => {
       renderBookApprovals();
     }
 
-    // --- Events ---
+    // --- Eventos ---
     let eventFilter = 'future';
     function isPastDate(dateStr) { if (!dateStr) return false; const d = new Date(dateStr + 'T00:00:00'); const t = new Date(); t.setHours(0,0,0,0); return d < t; }
     function formatShortDate(dateStr) { try { const d = new Date(dateStr); return d.toLocaleDateString('pt-BR', { day: '2-digit', month: 'short', year: 'numeric' }).replace(/\./g,''); } catch (e) { return dateStr; } }
@@ -315,7 +315,7 @@ document.addEventListener('DOMContentLoaded', () => {
       li.querySelector('button[data-action="cancel"]').addEventListener('click', () => renderEvents());
     }
 
-    // --- Admin form handling (create/update users) ---
+    // --- Formulário admin (criar/editar usuários) ---
     if (form) {
       form.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -342,10 +342,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (btnLimpar) btnLimpar.addEventListener('click', () => { if (form) form.reset(); if (nomeInput) nomeInput.focus(); editingUserIndex = -1; if (submitBtn) submitBtn.textContent = defaultSubmitText; });
     if (searchInput) searchInput.addEventListener('input', e => renderUsers(e.target.value));
 
-    // initial render
+    // renderização inicial
     renderUsers(); renderLoanRequests(); renderBookApprovals(); renderEvents();
 
-    // single delegated handler for userList to handle edit/delete/cancel
+    // manipulador delegado único para `userList` (editar/excluir/cancelar)
     if (userList) {
       userList.addEventListener('click', ev => {
         const btn = ev.target.closest('button'); if (!btn) return;
@@ -355,15 +355,15 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // event filters controls (if present)
+    // controles de filtro de eventos (se presentes)
     const btnAll = document.getElementById('filterAll'); const btnFuture = document.getElementById('filterFuture'); const btnPast = document.getElementById('filterPast');
     function setFilter(f) { eventFilter = f; renderEvents(); [btnAll, btnFuture, btnPast].forEach(b => { if (b) b.classList.remove('active-filter'); }); const map = { all: btnAll, future: btnFuture, past: btnPast }; if (map[f]) map[f].classList.add('active-filter'); }
     if (btnAll) btnAll.addEventListener('click', () => setFilter('all')); if (btnFuture) btnFuture.addEventListener('click', () => setFilter('future')); if (btnPast) btnPast.addEventListener('click', () => setFilter('past')); setFilter('future');
 
-    // logout button
+    // botão de logout
     const btnLogout = document.getElementById('btnLogout'); if (btnLogout) btnLogout.addEventListener('click', () => { localStorage.removeItem('livroAmigoIsAdmin'); window.location = 'admin-login.html'; });
 
-    // react to cross-page events
+    // reagir a eventos disparados por outras páginas
     window.addEventListener('eventsUpdated', () => { renderEvents(); renderLoanRequests(); renderBookApprovals(); renderUsers(searchInput ? searchInput.value : ''); });
     window.addEventListener('booksUpdated', () => { renderBookApprovals(); renderUsers(searchInput ? searchInput.value : ''); });
 
