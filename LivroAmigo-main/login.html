@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Acesse sua conta Livro Amigo para acompanhar doações, trocas e atividades como voluntário.">
+  <title>Login — Livro Amigo</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body class="auth">
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+  <main id="conteudo" class="container narrow" role="main">
+    <form class="form" action="perfil.html" method="get">
+      <h1>Login</h1>
+      <label for="email">E-mail
+        <span id="login-email-hint" class="field-hint">Informe o e-mail cadastrado para receber alertas e notificações.</span>
+      </label>
+      <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="login-email-hint">
+      <label for="senha">Senha
+        <span id="senha-hint" class="field-hint">Use pelo menos 6 caracteres. Letras e números reforçam a segurança.</span>
+      </label>
+      <input id="senha" name="senha" type="password" autocomplete="current-password" minlength="6" required aria-describedby="senha-hint">
+      <div class="form-actions">
+        <button class="btn" type="submit">Entrar</button>
+        <a class="btn btn--outline" href="cadastro.html">Cadastro</a>
+      </div>
+    </form>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <p>Projeto Livro Amigo · Biblioteca Comunitária</p>
+      <small>Feito com ❤ pela comunidade</small>
+      <p>
+        Integrantes:
+        <a class="link" href="https://github.com/peluca2007" target="_blank" rel="noopener">GitHub Pedro Lucas</a> ·
+        <a class="link" href="https://www.linkedin.com/in/pedro-lucas-sales-larini-7a885b1a4/" target="_blank" rel="noopener">LinkedIn Pedro Lucas</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="login.js" defer></script>
+</body>
+</html>

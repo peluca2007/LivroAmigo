@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description"
+    content="Biblioteca Comunitária Livro Amigo: conecte doadores, leitores e voluntários, veja livros em destaque e próximos eventos.">
+  <title>Livro Amigo — Biblioteca Comunitária</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Poppins:wght@400;600;800&display=swap"
+    rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="Página inicial Livro Amigo">
+        <img src="Public/ChatGPT%20Image%208%20de%20set.%20de%202025,%2017_44_16.png" alt="Logotipo Livro Amigo"
+          width="80" height="80" loading="lazy">
+        <span>Livro Amigo</span>
+      </a>
+      <nav class="nav">
+        <a href="index.html">Início</a>
+        <a href="livros.html">Livros</a>
+        <a href="eventos.html">Eventos</a>
+        <a href="cadastro.html">Cadastro</a>
+        <a href="admin.html">Admin</a> <a href="login.html" class="btn">Login</a>
+        <a href="perfil.html" class="btn btn--outline">Perfil</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero hero--carousel" aria-labelledby="hero-title">
+      <h2 id="hero-title" class="sr-only">Novidades e Destaques</h2>
+      <div class="container">
+        <div class="carousel-wrap" data-carousel data-carousel-interval="7000" role="region"
+          aria-label="Novidades Livro Amigo">
+          <div class="carousel">
+            <div class="carousel__slides">
+              <article class="carousel__slide is-active" data-slide
+                style="--slide-image: url('Public/imagem fundo.jpg');" role="listitem" aria-roledescription="slide"
+                aria-label="1 de 3">
+                <div class="carousel__content">
+                  <div class="carousel__meta">Comunidade unida</div>
+                  <p class="carousel__heading">Biblioteca Comunitária Livro Amigo</p>
+                  <p>Conecte doadores, leitores e voluntários para fortalecer o acesso à leitura na sua região.</p>
+                  <div class="hero-actions">
+                    <a class="btn" href="cadastro.html">Quero participar</a>
+                    <a class="btn btn--ghost" href="livros.html">Ver livros</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="carousel__slide" data-slide style="--slide-image: url('Public/imagem fundo criança.jpg');"
+                role="listitem" aria-roledescription="slide" aria-label="2 de 3">
+                <div class="carousel__content">
+                  <div class="carousel__meta">Eventos e encontros</div>
+                  <p class="carousel__heading carousel__heading--h2">Participe das rodas de leitura</p>
+                  <p>Vivencie clubes de leitura, feiras de troca e mutirões que movimentam a nossa biblioteca
+                    comunitária.</p>
+                  <div class="hero-actions">
+                    <a class="btn" href="eventos.html">Próximos eventos</a>
+                    <a class="btn btn--ghost" href="cadastro.html">Seja voluntário</a>
+                  </div>
+                </div>
+              </article>
+
+              <article class="carousel__slide" data-slide style="--slide-image: url('Public/fundo imagem.jpg');"
+                role="listitem" aria-roledescription="slide" aria-label="3 de 3">
+                <div class="carousel__content">
+                  <div class="carousel__meta">Doe ou troque</div>
+                  
+                  <p class="carousel__heading carousel__heading--h2">Compartilhe livros que inspiram</p>
+                  <p>Amplie o acervo da comunidade doando títulos favoritos ou trocando por novas histórias para ler.
+                  </p>
+                  <div class="hero-actions">
+                    <a class="btn" href="cadastro.html">Cadastrar doação</a>
+                    <a class="btn btn--ghost" href="livros.html">Explorar catálogo</a>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <button class="carousel__control carousel__control--prev" type="button" data-carousel-prev
+            aria-label="Slide anterior">‹</button>
+          <button class="carousel__control carousel__control--next" type="button" data-carousel-next
+            aria-label="Próximo slide">›</button>
+
+          <div class="carousel__dots" data-carousel-dots></div>
+        </div>
+      </div>
+    </section>
+    <section class="cards container">
+      <h2>Campanhas ativas</h2>
+        <div class="grid">
+        <article class="card">
+          <h3><i class="bx bxs-book-heart icon" aria-hidden="true"></i> Doe um livro infantil</h3>
+          <p>Ajude a formar novos leitores nas escolas do bairro.</p>
+          <a class="link" href="cadastro.html">Participar</a>
+        </article>
+        <article class="card">
+          <h3><i class="bx bxs-book-add icon" aria-hidden="true"></i> Mutirão de catalogação</h3>
+          <p>Venha organizar o acervo comunitário no sábado.</p>
+          <a class="link" href="eventos.html">Ver evento</a>
+        </article>
+        <article class="card">
+          <h3><i class="bx bxs-group icon" aria-hidden="true"></i> Clube de leitura</h3>
+          <p>Encontros quinzenais para discutir autores nacionais.</p>
+          <a class="link" href="eventos.html">Inscreva-se</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="cards container">
+      <h2>Livros em destaque</h2>
+        <div class="grid" id="featuredGrid">
+        <article class="book">
+          <img class="book-cover" src="Public/1984Livro.jpg" alt="Capa do livro 1984" width="72" height="96"
+            loading="lazy" decoding="async">
+          <div>
+            <h3>1984</h3>
+            <p class="muted">George Orwell · Usado, bom</p>
+          </div>
+        </article>
+        <article class="book">
+          <img class="book-cover" src="Public/capitalLivro.webp" alt="Capa do livro O Capital" width="72" height="96"
+            loading="lazy" decoding="async">
+          <div>
+            <h3>O Capital</h3>
+            <p class="muted">Karl Marx · Novo</p>
+          </div>
+        </article>
+        <article class="book">
+          <img class="book-cover" src="Public/metamorfeseLivro.jpg" alt="Capa do livro A Metamorfose" width="72"
+            height="96" loading="lazy" decoding="async">
+          <div>
+            <h3>A Metamorfose</h3>
+            <p class="muted">Franz Kafka · Usado, regular</p>
+          </div>
+        </article>
+      </div>
+      <div class="center"><a class="btn btn--outline" href="livros.html">Ver catálogo completo</a></div>
+    </section>
+
+    <section class="cards container">
+      <h2>Próximos eventos</h2>
+      <ul class="events">
+        <li>
+          <time datetime="2025-11-05">05 nov</time>
+          <div>
+            <strong>Roda de leitura: literatura brasileira</strong>
+            <p class="muted">Centro Comunitário · 19h</p>
+          </div>
+        </li>
+        <li>
+          <time datetime="2025-11-12">12 nov</time>
+          <div>
+            <strong>Feira de troca de livros</strong>
+            <p class="muted">Praça Principal · 10h–16h</p>
+          </div>
+        </li>
+      </ul>
+      <div class="center"><a class="btn btn--ghost" href="eventos.html">Todos os eventos</a></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Projeto Livro Amigo · Biblioteca Comunitária</p>
+      <small>Feito com ❤ pela comunidade</small>
+      <p>
+        Integrantes:
+        <a class="link" href="https://github.com/peluca2007" target="_blank" rel="noopener">GitHub Pedro Lucas</a> ·
+        <a class="link" href="https://www.linkedin.com/in/pedro-lucas-sales-larini-7a885b1a4/" target="_blank" rel="noopener">LinkedIn Pedro Lucas</a>
+      </p>
+    </div>
+  </footer>
+  <script src="events.js" defer></script>
+  <script src="script.js" defer></script>
+  <script src="index-books.js" defer></script>
+</body>
+
+</html>
