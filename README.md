@@ -1,80 +1,82 @@
-# Livro Amigo — Biblioteca Comunitária
+# 📚 Livro Amigo — Biblioteca Comunitária
 
-Website estático que conecta doadores, leitores e voluntários para incentivar o acesso à leitura na comunidade. Entrega as páginas: Início, Catálogo, Eventos, Cadastro, Login e Perfil, com foco em semântica, acessibilidade e validação W3C.
+**Livro Amigo** é uma aplicação web desenvolvida para gerenciar uma biblioteca comunitária. O projeto conecta leitores, permite o empréstimo de livros, a doação de obras e a organização de eventos culturais, promovendo o incentivo à leitura e a integração da comunidade.
 
-## Sumário
-- [Objetivo e ODS](#objetivo-e-ods)
-- [Requisitos atendidos (Projeto 1)](#requisitos-atendidos-projeto-1)
-- [Páginas](#páginas)
-- [Tecnologias](#tecnologias)
-- [Estrutura do projeto](#estrutura-do-projeto)
-- [Publicação no GitHub Pages](#publicação-no-github-pages)
-- [Acessibilidade aplicada](#acessibilidade-aplicada)
-- [Integrantes](#integrantes)
-- [Licença](#licença)
+> **Nota:** Este projeto utiliza `localStorage` para persistência de dados, simulando um banco de dados diretamente no navegador.
 
-## Objetivo e ODS
-- Facilitar trocas/doações de livros, organização de eventos e cadastro de voluntários.
-- Alinha-se ao ODS 4 — Educação de Qualidade.
+---
 
-## Requisitos atendidos (Projeto 1)
-- Página principal com: cabeçalho, rodapé, menu, 3+ imagens, 3+ links, 3+ cores, 2+ fontes e 2+ ícones.
-- Página de cadastro com 5+ campos e botão que direciona ao login.
-- HTML e CSS separados e prontos para validação W3C.
-- Link para currículo/portfólio de integrante no rodapé da página principal.
+## 🚀 Funcionalidades
 
-## Páginas
-- index.html — Home com carrossel, campanhas, destaques e próximos eventos.
-- livros.html — Catálogo com título, autor, condição e link de detalhes.
-- eventos.html — Lista de eventos com data e descrição.
-- cadastro.html — Formulário com Nome, E-mail, Telefone, Tipo de usuário, Localização e newsletter. Envia para login.html.
-- login.html — Interface de login e atalho para cadastro.
-- perfil.html — Visão estática de histórico e “Meus livros”.
+### 👤 Para Usuários (Membros)
+* **Cadastro e Login:** Criação de conta e autenticação segura.
+* **Catálogo de Livros:** Visualização de livros disponíveis com busca por título ou autor.
+* **Solicitação de Empréstimo:** Usuários podem solicitar livros que não sejam seus.
+* **Gestão de Acervo Pessoal:**
+    * Adicionar seus próprios livros ao sistema (requer aprovação do admin).
+    * Gerenciar status dos livros (Disponível, Emprestado, Retirado).
+* **Perfil:** Histórico de leitura, livros emprestados e eventos confirmados.
+* **Eventos:** Visualização e inscrição em eventos da comunidade (Rodas de leitura, feiras, etc.).
 
-## Tecnologias
-- HTML5 semântico, CSS3 modular (um único style.css).
-- JavaScript leve para carrossel (script.js).
-- Google Fonts (Poppins, Merriweather) e ícones Boxicons.
-- Imagens em Public/.
+### 🛡️ Para Administradores
+* **Gestão de Usuários:** Listar, editar e excluir usuários cadastrados.
+* **Aprovação de Livros:** Validar novos livros cadastrados pelos usuários antes de irem para o catálogo público.
+* **Gestão de Empréstimos:** Aprovar ou rejeitar pedidos de empréstimo entre usuários.
+* **Gestão de Eventos:** Criar, editar e excluir eventos culturais.
 
-## Estrutura do projeto
-```
-LivroAmigo/
-├── index.html
-├── livros.html
-├── eventos.html
-├── cadastro.html
-├── login.html
-├── perfil.html
-├── style.css
-├── script.js
-├── README.md
-└── Public/
-    ├── 1984Livro.jpg
-    ├── capitalLivro.webp
-    ├── metamorfeseLivro.jpg
-    ├── imagem fundo.jpg
-    ├── imagem fundo criança.jpg
-    ├── fundo imagem.jpg
-    └── ChatGPT Image 8 de set. de 2025, 17_44_16.png
-```
+---
 
+## 🛠️ Tecnologias Utilizadas
 
-## Publicação no GitHub Pages
-https://peluca2007.github.io/LivroAmigo/
+* **HTML5:** Estrutura semântica das páginas.
+* **CSS3:** Estilização responsiva e design moderno.
+* **JavaScript (Vanilla):** Lógica de interação, manipulação do DOM e persistência de dados.
+* **LocalStorage:** Utilizado para salvar usuários, livros, eventos e histórico sem necessidade de banco de dados externo.
 
-## Acessibilidade aplicada
-- Skip link para conteúdo principal e foco visível em links/botões.
-- Navegação por teclado, contraste revisado e tipografia legível.
-- Imagens com alt adequado; logotipo com alt descritivo.
-- Semântica: header, main, section, nav, footer, headings hierárquicos.
+---
 
-## Integrantes
-- Pedro Lucas
-  - GitHub: https://github.com/peluca2007
-  - LinkedIn: https://www.linkedin.com/in/pedro-lucas-sales-larini-7a885b1a4/
+## 📂 Estrutura do Projeto
 
-Se houver mais integrantes, adicione-os aqui e no rodapé do index.html.
+Os principais arquivos do sistema são:
 
-## Licença
-Projeto comunitário, uso livre para fins educacionais e sociais.
+* `index.html`: Página inicial com destaques.
+* `livros.html` / `livros.js`: Catálogo e lógica de busca/empréstimo.
+* `perfil.html` / `perfil.js`: Painel do usuário (meus livros, histórico).
+* `admin.html` / `admin.js`: Painel de controle geral.
+* `cadastro.html` / `login.html`: Fluxo de autenticação.
+* `style.css`: Folha de estilos global.
+
+---
+
+## ⚙️ Como Rodar o Projeto
+
+1.  **Clone o repositório** ou baixe os arquivos ZIP.
+2.  Abra a pasta do projeto.
+3.  Execute o arquivo `index.html` em seu navegador de preferência (Chrome, Firefox, Edge).
+
+Não é necessário instalar dependências (`npm`) ou configurar servidores, pois o projeto é estático e roda inteiramente no client-side.
+
+---
+
+## 🔐 Acesso ao Painel Admin
+
+Para testar as funcionalidades administrativas:
+
+1.  Acesse a página de **Login** e clique no link ou navegue para `admin-login.html`.
+2.  Utilize a senha padrão configurada no código:
+    * **Senha:** `00`
+
+---
+
+## 👨‍💻 Autor
+
+Desenvolvido por **Pedro Lucas Sales Larini**.
+
+* [GitHub](https://github.com/peluca2007)
+* [LinkedIn](https://www.linkedin.com/in/pedro-lucas-sales-larini-7a885b1a4/)
+
+---
+
+<p align="center">
+  Feito com ❤ pela comunidade para a comunidade.
+</p>
